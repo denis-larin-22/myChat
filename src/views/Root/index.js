@@ -1,3 +1,3 @@
-export function Root() {
-
+export const Root = () => {
+    return null
 }
