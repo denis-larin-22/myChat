@@ -1,3 +1,18 @@
-import { createTheme } from '@mui/material';
+import { createTheme} from '@mui/material';
 
-export default createTheme({});
+import { LinkBehavior } from './override/LinkBehavior';
+
+export default createTheme({
+    components: {
+        MuiLink: {
+            defaultProps: {
+                component: LinkBehavior,
+            },
+        },
+        MuiButtonBase: {
+            defaultProps: {
+                LinkComponent: LinkBehavior,
+            },
+        },
+    },
+});
