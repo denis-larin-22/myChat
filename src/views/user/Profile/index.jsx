@@ -1,3 +1,3 @@
 export const UserProfile = () => {
-    return null;
-}
+    return <h1>Profile</h1>;
+};

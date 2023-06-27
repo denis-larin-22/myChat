@@ -1,3 +1,3 @@
 export const AuthForgot = () => {
-    return null
-} 
+    return null;
+};
