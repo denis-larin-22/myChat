@@ -40,4 +40,8 @@ export const routes = createBrowserRouter([
         path: '/forgot',
         element: <AuthForgot />,
     },
+    {
+        path: '/profile',
+        element: <UserProfile />,
+    },
 ]);
