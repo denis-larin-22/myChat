@@ -1,5 +1,4 @@
 import { createTheme} from '@mui/material';
-
 import { LinkBehavior } from './override/LinkBehavior';
 
 export default createTheme({
