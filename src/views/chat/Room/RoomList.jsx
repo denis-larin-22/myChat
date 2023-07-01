@@ -6,8 +6,6 @@ export const RoomList = () => {
 
     return (
         <Box sx={{
-            width: 'fit-content',
-            padding: '10px',
             display: 'flex',
             flexDirection: 'column',
             gap: '10px',

@@ -4,21 +4,12 @@ import { useTheme } from '@mui/material/styles';
 
 import { useState } from 'react';
 
-export const ActiveRoomForm = () => {
+export const ActiveRoomForm = ({ sendHandler }) => {
     const [inputText, setInputText] = useState('');
-    const [isInputEmpty, setIsInputEmpty] = useState({ error: false, label: 'Send a message' });
 
-    const onChangeHandler = (inputValue) => {
-        if (!inputValue) return;
-        setInputText(inputValue);
-        setIsInputEmpty({ error: false, label: 'Send a message' });
-    };
-
-    const sendHandler = () => {
-        if (!inputText) {
-            setIsInputEmpty({ error: true, label: 'Please enter a message' });
-            return;
-        }
+    const sendBtnHandler = () => {
+        if (!inputText) return;
+        sendHandler(inputText);
         setInputText('');
     };
 
@@ -27,18 +18,17 @@ export const ActiveRoomForm = () => {
     return (
         <Box sx={{
             position: 'relative',
-            backgroundColor: 'rgba(64, 65, 78, 1)'
+            backgroundColor: theme.palette.background.default
         }}>
             <TextField
-                label={isInputEmpty.label}
+                label={'Enter a message'}
                 variant="filled"
                 value={inputText}
-                onChange={e => onChangeHandler(e.target.value)}
+                onChange={e => setInputText(e.target.value)}
                 multiline={true}
-                error={isInputEmpty.error}
                 fullWidth={true}
             />
-            <IconButton onClick={sendHandler} variant="contained" aria-label="send" size="large" sx={{
+            <IconButton onClick={sendBtnHandler} variant="contained" aria-label="send" size="large" sx={{
                 position: 'absolute',
                 right: '0'
             }}>

@@ -3,18 +3,18 @@ export function createAction(type) {
     actionCreator.TYPE = type;
   
     return actionCreator;
-  }
+}
   
-  export function createPayloadAction(type) {
+export function createPayloadAction(type) {
     const actionCreator = (payload) => ({ type, payload });
     actionCreator.TYPE = type;
   
     return actionCreator;
-  }
+}
   
-  export function createErrorAction(type) {
+export function createErrorAction(type) {
     const actionCreator = (error) => ({ type, error });
     actionCreator.TYPE = type;
   
     return actionCreator;
-  }
+}
