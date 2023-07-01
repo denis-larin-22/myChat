@@ -1,5 +1,5 @@
-// import { Container } from '@mui/material';
 import Box from '@mui/material/Box';
+import 'reset-css';
 
 // import { Header } from './components/Header';
 // import { Outlet } from 'react-router';
@@ -9,11 +9,6 @@ import { ActiveRoom } from '../chat/Room/ActiveRoom';
 
 export const Root = () => {
     return (
-        // <Container>
-        //     {/* <Header />
-        //     <Outlet /> */}
-        //     <ActiveRoom />
-        // </Container>
         <Box maxWidth='lg' sx={{
             minHeight: '100vh',
             minWidth: '100vw',
