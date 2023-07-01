@@ -8,14 +8,14 @@ import {
     Menu,
     Container,
     Avatar,
-    Button,
     Tooltip,
     MenuItem,
+    Link,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = [{ name: 'SignIn', link: '/signin' }, { name: 'SignUp', link: '/signup' }];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
@@ -90,10 +90,14 @@ export const Header = () => {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
+                            {pages.map((page, index) => (
+                                <Link
+                                    variant='subtitle1'
+                                    key={index}
+                                    href={page.link}
+                                >
+                                    {page.name}
+                                </Link>
                             ))}
                         </Menu>
                     </Box>
@@ -117,14 +121,16 @@ export const Header = () => {
                         LOGO
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
+                        {pages.map((page, index) => (
+                            <Link
+                                variant='subtitle1'
+                                key={index}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
+                                href={page.link}
                             >
-                                {page}
-                            </Button>
+                                {page.name}
+                            </Link>
                         ))}
                     </Box>
 

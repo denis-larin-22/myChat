@@ -23,7 +23,7 @@ export const RoomItem = () => {
                 height: '50px'
             }}>H</Avatar>
             <Typography variant="subtitle1" sx={{ gridArea: 'name' }}>Denis</Typography>
-            <Typography variant="subtitle2" sx={{ gridArea: 'text' }}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. </Typography>
+            <Typography variant="subtitle2" sx={{ gridArea: 'text' }}>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</Typography>
             <RoomItemButton />
         </Box>
     );
