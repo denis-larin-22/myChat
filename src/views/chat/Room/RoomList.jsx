@@ -6,10 +6,7 @@ export const RoomList = () => {
 
     return (
         <Box sx={{
-            border: '1px solid white',
             width: 'fit-content',
-            // overflowY: 'scroll',
-            // height: '500px',
             padding: '10px',
             display: 'flex',
             flexDirection: 'column',

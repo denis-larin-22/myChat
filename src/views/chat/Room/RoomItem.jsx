@@ -1,18 +1,19 @@
 import { Avatar, Box, Typography } from '@mui/material';
 import { RoomItemButton } from './RoomItemButton';
+import theme from '../../../core/theme';
 
 export const RoomItem = () => {
     return (
         <Box sx={{
-            bgcolor: 'rgba(68, 70, 84, 1)',
-            width: '320px',
+            bgcolor: theme.palette.background.window,
+            width: '100%',
             padding: '15px',
             borderRadius: '10px',
             display: 'grid',
             gridTemplateAreas: '\'avatar name\' \'avatar text\'',
             gap: '0 10px',
             alignItems: 'center',
-            color: 'rgba(236, 236, 241, 1)',
+            color: theme.palette.text.primary,
             position: 'relative',
             overflow: 'hidden'
         }}>
@@ -21,8 +22,8 @@ export const RoomItem = () => {
                 width: '50px',
                 height: '50px'
             }}>H</Avatar>
-            <Typography variant="h6" sx={{ gridArea: 'name' }}>Denis</Typography>
-            <Typography variant="p" sx={{ gridArea: 'text' }}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. </Typography>
+            <Typography variant="subtitle1" sx={{ gridArea: 'name' }}>Denis</Typography>
+            <Typography variant="subtitle2" sx={{ gridArea: 'text' }}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. </Typography>
             <RoomItemButton />
         </Box>
     );

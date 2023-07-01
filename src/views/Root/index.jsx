@@ -1,10 +1,13 @@
 import Box from '@mui/material/Box';
 import 'reset-css';
+import './index.css';
 
 // import { Header } from './components/Header';
 // import { Outlet } from 'react-router';
-import { RoomList } from '../chat/Room/RoomList';
 import { ActiveRoom } from '../chat/Room/ActiveRoom';
+import { Sidebar } from './components/Sidebar';
+import { Header } from './components/Header';
+import theme from '../../core/theme';
 // import { ActiveRoom } from '../chat/Room/ActiveRoom';
 
 export const Root = () => {
@@ -18,21 +21,21 @@ export const Root = () => {
             gridTemplateColumns: '400px 1fr',
             gridTemplateRows: '60px',
         }}>
-            <Box sx={{
+            <Box component={'header'} sx={{
                 gridArea: '1 / 1 / 2 / 6',
                 bgcolor: '#2C387E',
             }}>
-                <a href="/">Home</a><a href="/">About</a><a href="/">Contact</a>
+                <Header />
             </Box>
-            <Box sx={{
+            <Box component={'section'} sx={{
                 gridArea: '2 / 1 / 6 / 2',
-                bgcolor: '#3f51b5',
+                bgcolor: theme.palette.background.paper,
             }}>
-                <RoomList />
+                <Sidebar />
             </Box>
             <Box sx={{
                 gridArea: '2 / 2 / 6 / 6',
-                border: '10px solid black'
+                bgcolor: theme.palette.background.default,
             }}>
                 <ActiveRoom />
             </Box>

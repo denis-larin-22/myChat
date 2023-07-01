@@ -1,5 +1,6 @@
 import { Box, IconButton, TextField } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
+import { useTheme } from '@mui/material/styles';
 
 import { useState } from 'react';
 
@@ -21,6 +22,8 @@ export const ActiveRoomForm = () => {
         setInputText('');
     };
 
+    const theme = useTheme();
+
     return (
         <Box sx={{
             position: 'relative',
@@ -39,7 +42,9 @@ export const ActiveRoomForm = () => {
                 position: 'absolute',
                 right: '0'
             }}>
-                <SendIcon />
+                <SendIcon sx={{
+                    color: theme.palette.primary.main
+                }} />
             </IconButton>
         </Box>
     );
