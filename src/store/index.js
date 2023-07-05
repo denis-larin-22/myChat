@@ -1,4 +1,8 @@
-import { createStore } from 'redux';
+import { applyMiddleware, compose, createStore } from 'redux';
 import { rootReducer } from './rootReducer';
 
-export const store = createStore(rootReducer);
+const middlewares = [
+    // massagesMiddleware;
+];
+
+export const store = createStore(rootReducer, compose(applyMiddleware(...middlewares)));
